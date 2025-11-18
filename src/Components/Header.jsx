@@ -9,7 +9,7 @@ export default function Header() {
           alt="Around the U.S logo"
           className="logo header__logo"
         />
-        <h1>Helena</h1>
+       
       </header>
     </div>
   );
