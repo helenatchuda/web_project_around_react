@@ -8,24 +8,23 @@
   left: 0;
   bottom: 0;
   right: 0;
-  display: none;
-}
-.popup__opened {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
-.popup__container {
+
+.popup__content {
   text-align: center;
   position: relative;
   width: 430px;
 
-  height: auto;
+  
   background-color: rgb(241, 240, 240);
   border-radius: 10px;
-  padding: 24px 0 34px;
+  padding: 44px 0 px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

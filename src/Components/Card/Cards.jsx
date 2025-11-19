@@ -1,7 +1,6 @@
-import card from '../images/image1_card.jpg'
-import lixeira from '../images/Trash_lixeira.png'
-import heart from '../images/heart.png'
-
+import card from '../../images/image2_card.png'
+import lixeira from '../../images/Trash_lixeira.png'
+import heart from '../../images/heart.png';
 
 export default function Cards(props){
 
