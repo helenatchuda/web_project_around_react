@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Cards from "../Card/Cards";
+import Card from "../Card/Cards";
 import Profile from "../Profile";
 import Popup from "../Popup/Popup";
 import NewCard from "../NewCard/NewCard";
@@ -63,7 +63,10 @@ export default function Main() {
       />
 
       <ul className="cards">
-        <Cards />
+        
+        {cards.map((card) => (
+        <Card card={card}/>
+        ))}
       </ul>
       {popup && (
         <Popup onClose={handleClosePopup} title={popup.title}>

@@ -2,12 +2,13 @@ import card from "../../images/image2_card.png";
 import lixeira from "../../images/Trash_lixeira.png";
 import heart from "../../images/heart.png";
 
-export default function Cards(props) {
+export default function Card(props) {
+  const {name,link}= props.card
   return (
     <>
       <li className="card">
         <div className="card__image-container">
-          <img src={card} alt="Imagem do cartão" className="card__image" />
+          <img src={link} alt="Imagem do cartão" className="card__image" />
           <button className="card__delete-button" aria-label="Apagar cartão">
             <img
               src={lixeira}
@@ -17,7 +18,7 @@ export default function Cards(props) {
           </button>
         </div>
         <div className="card__footer">
-          <h2 className="card__title"></h2>
+          <h2 className="card__title">{name}</h2>
           <img src={heart} alt="Curtir cartão" className="card__heart" />
         </div>
       </li>
