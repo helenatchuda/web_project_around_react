@@ -1,4 +1,4 @@
-import logo from '../../images/logo.png';
+import logo from "../../images/logo.png";
 
 export default function Header() {
   return (
@@ -9,7 +9,6 @@ export default function Header() {
           alt="Around the U.S logo"
           className="logo header__logo"
         />
-       
       </header>
     </div>
   );

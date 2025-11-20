@@ -1,11 +1,6 @@
 export default function NewCard() {
   return (
-    <form
-      className="form"
-      name="card-form"
-      id="new-card-form"
-      noValidate
-    >
+    <form className="form" name="card-form" id="new-card-form" noValidate>
       <label className="form__field">
         <input
           className="form__input form__input_type_card-name"
@@ -31,7 +26,7 @@ export default function NewCard() {
         <span className="form__error" id="card-link-error"></span>
       </label>
 
-      <button className="button form__button" type="submit">
+      <button className=" popup__save-button popup__save-button_disabled">
         Salvar
       </button>
     </form>

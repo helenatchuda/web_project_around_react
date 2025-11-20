@@ -48,6 +48,7 @@
   grid-area: button;
   width: 24px;
   height: 24px;
+  right: 50px;
   align-self: center;
   background: transparent;
   border: 1px solid #ffffff;

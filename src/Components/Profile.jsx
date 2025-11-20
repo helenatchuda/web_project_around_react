@@ -6,11 +6,20 @@ export default function Profile(props) {
   return (
     <section className="profile">
       <div className="profile__container">
-        <img src={avatar} alt="Foto de perfil" className="profile__avatar" />
+        <img
+          src={avatar}
+          onClick={props.onPhotoClick}
+          alt="Foto de perfil"
+          className="profile__avatar"
+        />
         <div className="profile__info">
           <h1 className="profile__name">Jacques Cousteau</h1>
           <h2 className="profile__description">Explorador</h2>
-          <button className="profile__edit-button" aria-label="Editar perfil">
+          <button
+            className="profile__edit-button"
+            onClick={props.onEditProfile}
+            aria-label="Editar perfil"
+          >
             <img src={caneta} alt="Ícone editar perfil" className="" />
           </button>
         </div>
