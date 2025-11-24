@@ -65,7 +65,7 @@ export default function Main() {
       <ul className="cards">
         
         {cards.map((card) => (
-        <Card card={card}/>
+        <Card key={card._id} card={card}/>
         ))}
       </ul>
       {popup && (
