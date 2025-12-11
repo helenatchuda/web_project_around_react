@@ -8,6 +8,7 @@ import EditProfile from "../EditProfile/EditProfile";
 import {api }from "../../utils/api";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext"; 
 
+
 export default function Main({ 
   onCardLike, 
   onCardDelete,
