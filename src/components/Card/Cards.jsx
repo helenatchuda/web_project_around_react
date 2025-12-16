@@ -8,7 +8,9 @@ export default function Card(props) {
 
   const  handleLikeClick=(e)=> {
 
-    onCardLike(card);
+    onCardLike({...card,isLiked:!isLiked},!isLiked
+     
+    );
   }
 
   function handleDeleteClick(e) {

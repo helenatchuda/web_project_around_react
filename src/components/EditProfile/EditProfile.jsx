@@ -45,7 +45,7 @@ export default function EditProfile({ onUpdateUser, onClose }) {
         about: description.trim(),
       });
 
-      // O popup será fechado automaticamente pelo App
+     onClose();
     } catch (error) {
       console.error("Erro ao atualizar perfil:", error);
       setIsSubmitting(false);

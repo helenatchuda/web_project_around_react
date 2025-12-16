@@ -6,19 +6,19 @@ export default function NewCard({ onAddCard, onClose }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    
+
 
     onAddCard({
       name: cardName,
       link: cardLink
     });
-    
+
 
 
     onClose();
   }
   return (
-    <form className="form" name="card-form" id="new-card-form" >
+    <form className="form" name="card-form" id="new-card-form" onSubmit={handleSubmit} >
       <label className="form__field">
         <input
           className="form__input form__input_type_card-name"
@@ -29,7 +29,7 @@ export default function NewCard({ onAddCard, onClose }) {
           placeholder="Title"
           required
           type="text"
-           value={cardName}
+          value={cardName}
           onChange={(e) => setCardName(e.target.value)}
         />
         <span className="form__error" id="card-name-error"></span>
@@ -52,7 +52,7 @@ export default function NewCard({ onAddCard, onClose }) {
       <button className=" popup__save-button "
         type="submit"
       >
-        
+
         Salvar
       </button>
     </form>

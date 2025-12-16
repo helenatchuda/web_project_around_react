@@ -21,9 +21,29 @@ class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
+  setUserAvatar(avatar) {
+    return fetch(`${this._baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify({
+        avatar,
+      }),
+    }).then(this._handleServerResponse);
+  }
+
+  addNewCard({ name, link }) {
+    return fetch(`${this._baseUrl}/cards`, {
+      method: "POST",
+      headers: this.headers,
+      body: JSON.stringify({
+        name,
+        link,
+      }),
+    }).then(this._handleServerResponse);
+  }
 
   //PATCH https://around-api.pt-br.tripleten-services.com/v1/users/me
-  setUserData({ name, about }) {
+  setUserInfo({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this.headers,
@@ -33,6 +53,15 @@ class Api {
       }),
     });
   }
+
+  deleteCard(cardId) {
+    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: this.headers,
+    }).then(this._handleServerResponse);
+  }
+
+
 
   //GET https://around-api.pt-br.tripleten-services.com/v1/users/me
   getUserInfo() {

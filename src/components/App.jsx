@@ -3,7 +3,7 @@ import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import { useState, useEffect } from "react";
-import {api} from "../utils/api";
+import { api } from "../utils/api";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -30,30 +30,51 @@ function App() {
         console.error("Erro ao buscar cards:", error);
       });
   }, []);
+function handleAddCard(card){
+
+  api.addNewCard(card)
+  .then((addedCard)=>{
+    setCards([addedCard, ...cards]);
+  })
+}
 
   // Função para atualizar likes
-  function handleCardLike(updatedCard) {
+function handleCardLike(updatedCard,like) {
+  console.log(updatedCard)
+  api.changeLikeCardStatus(updatedCard._id, like)
     setCards((prevCards) =>
       prevCards.map((card) =>
         card._id === updatedCard._id ? updatedCard : card
       )
     );
   }
+  function handleUpdateAvatar(avatar){
+    api.setUserAvatar(avatar)
+     .then((avatarData)=>{
+        setCurrentUser(avatarData);
 
+     })
+  }
   // Função para excluir card
-  function handleCardDelete(cardId) {
-    setCards((prevCards) =>
-      prevCards.filter((card) => card._id !== cardId)
+  function handleCardDelete(card) {
+    api.deleteCard(card._id)
+   .then(() =>
+      setCards((prevCards) =>
+        prevCards.filter((item) => item._id !== card._id)
+      )
     );
   }
-
+  
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <Header />
-      <Main 
+      <Main
         cards={cards}
+        onUpdateUser={setCurrentUser}
         onCardLike={handleCardLike}
         onCardDelete={handleCardDelete}
+         onUpdateAvatar={handleUpdateAvatar}
+         onAddCard={handleAddCard}
       />
       <Footer />
     </CurrentUserContext.Provider>

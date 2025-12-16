@@ -38,6 +38,7 @@ export default function EditAvatar(onUpdateAvatar, onClose) {
     onUpdateAvatar({
       avatar: avatarUrl,
     });
+    onClose();
   };
 
   useEffect(() => {

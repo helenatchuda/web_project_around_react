@@ -1,8 +1,12 @@
 import avatar from "../images/Avatar.png";
 import caneta from "../images/caneta.png";
 import addIcon from "../images/Add.png";
+import { useContext } from "react";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 export default function Profile(props) {
+
+  const currentUser = useContext(CurrentUserContext)
   return (
     <section className="profile">
       <div className="profile__container">
@@ -13,8 +17,8 @@ export default function Profile(props) {
           className="profile__avatar"
         />
         <div className="profile__info">
-          <h1 className="profile__name">Jacques Cousteau</h1>
-          <h2 className="profile__description">Explorador</h2>
+          <h1 className="profile__name">{currentUser.name}</h1>
+          <h2 className="profile__description">{currentUser.about}</h2>
           <button
             className="profile__edit-button"
             onClick={props.onEditProfile}
