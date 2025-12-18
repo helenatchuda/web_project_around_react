@@ -14,24 +14,23 @@
   justify-content: center;
 
 }
-
-
 .popup__content {
-  text-align: center;
-  position: relative;
-  width: 450px;
-  height: 350px;
-
-  justify-content: flex-start; 
-  padding-top: 70px;
-  background-color: rgb(241, 240, 240);
-  border-radius: 10px;
-  padding: 44px 0 px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* Garante que o conteúdo comece no topo */
+  
+  text-align: center;
+  position: relative;
+  width: 420px;
+  height: 350px;
+  background-color: rgb(241, 240, 240);
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  padding: 20px 30px; 
 }
+
 
 
 .popup__title {
