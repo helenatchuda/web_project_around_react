@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import{api} from "../../utils/api";
 
 
 export default function EditProfile({ onUpdateUser, onClose }) {
@@ -44,6 +45,11 @@ export default function EditProfile({ onUpdateUser, onClose }) {
         name: name.trim(),
         about: description.trim(),
       });
+      api.setUserInfo({
+
+        name: name.trim(),
+        about: description.trim(),
+      })
 
      onClose();
     } catch (error) {

@@ -18,6 +18,7 @@ export default function NewCard({ onAddCard, onClose }) {
     onClose();
   }
   return (
+    
     <form className="form" name="card-form" id="new-card-form" onSubmit={handleSubmit} >
       <label className="form__field">
         <input

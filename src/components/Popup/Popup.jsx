@@ -5,14 +5,14 @@ export default function Popup(props) {
   return (
     <div className="popup">
       
-      <div className={`popup__content ${title? "" :"popup__container-image"}`}>
+      <div className={`${title? "popup__content" :"popup__container-image"}`}>
         <button
           onClick={props.onClose}
           aria-label="Close modal"
           className="popup__close"
           type="button"
         />
-        {/* <h3 className="popup__title">{title}</h3> */}
+        {title && <h3 className="popup__title">{title}</h3>}
         {children}
       </div>
     </div>

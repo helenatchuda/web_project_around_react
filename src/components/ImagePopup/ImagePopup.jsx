@@ -5,16 +5,16 @@ export default function ImagePopup(props){
       
     return(
    
-      <div class="popup__container-image">
+      <div className="popup__container-image">
        
 
 
         <img src={props.link}
 
           alt="Imagem ampliada"
-          class="popup__image"
+          className="popup__image"
         />
-        <p class="popup__image-title">{props.name}</p>
+        <p className="popup__image-title">{props.name}</p>
       </div>
   
       
