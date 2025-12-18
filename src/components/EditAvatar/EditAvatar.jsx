@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-export default function EditAvatarEditAvatar({onUpdateAvatar, onClose}) {
+export default function EditAvatar({onUpdateAvatar, onClose}) {
   const avatarInputRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
