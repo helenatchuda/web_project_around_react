@@ -55,6 +55,7 @@ function handleCardLike(updatedCard,like) {
 
      })
   }
+ 
   // Função para excluir card
   function handleCardDelete(card) {
     api.deleteCard(card._id)
@@ -64,7 +65,7 @@ function handleCardLike(updatedCard,like) {
       )
     );
   }
-  
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <Header />
@@ -75,6 +76,7 @@ function handleCardLike(updatedCard,like) {
         onCardDelete={handleCardDelete}
          onUpdateAvatar={handleUpdateAvatar}
          onAddCard={handleAddCard}
+        
       />
       <Footer />
     </CurrentUserContext.Provider>

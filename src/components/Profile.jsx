@@ -11,7 +11,7 @@ export default function Profile(props) {
     <section className="profile">
       <div className="profile__container">
         <img
-          src={avatar}
+          src={currentUser.avatar}
           onClick={props.onPhotoClick}
           alt="Foto de perfil"
           className="profile__avatar"

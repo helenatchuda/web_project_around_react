@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-export default function EditAvatar(onUpdateAvatar, onClose) {
+export default function EditAvatarEditAvatar({onUpdateAvatar, onClose}) {
   const avatarInputRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -51,11 +51,11 @@ export default function EditAvatar(onUpdateAvatar, onClose) {
   return (
     <form className="form" name="photo-form" id="new-photo-form" onSubmit={handleSubmit}>
       <label className="form__field">
-        <input
+        <input ref={avatarInputRef}
           className="form__input form__input_type_photo-name"
           id="Photo-name"
-          maxLength="30"
-          minLength="1"
+        
+         
           name="Photo-name"
           placeholder="image link"
           required

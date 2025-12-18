@@ -6,11 +6,7 @@ export default function ImagePopup(props){
     return(
    
       <div class="popup__container-image">
-        <img
-          src="./images/Close Icon.png"
-          alt="Fechar imagem"
-          class="popup__close"
-        />
+       
 
 
         <img src={props.link}

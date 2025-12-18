@@ -15,13 +15,16 @@ export default function Main({
   onUpdateUser,
   onAddCard,
   onUpdateAvatar,
+ 
+
   cards
+
 }) {
   const currentUser = useContext(CurrentUserContext); // Obter usuário do contexto
 
   const [popup, setPopup] = useState(null);
   
-
+    
 
   // Configuração dos popups
   const newCardPopup = {
@@ -56,6 +59,7 @@ export default function Main({
 
   // Handlers para abrir/fechar popups
   function handleOpenPopup(popupType) {
+   
     setPopup(popupType);
   }
 
@@ -94,6 +98,7 @@ export default function Main({
               <Card
                 key={card._id}
                 card={card}
+                onCardClick={handleOpenPopup}
                 isLiked={isLiked}
                 isOwn={isOwn}
                 onCardLike={onCardLike}

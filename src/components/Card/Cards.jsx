@@ -1,6 +1,7 @@
 import card from "../../images/image2_card.png";
 import lixeira from "../../images/Trash_lixeira.png";
 import heart from "../../images/heart.png";
+import ImagePopup from "../ImagePopup/ImagePopup";
 
 export default function Card(props) {
   const { card, isLiked, isOwn, onCardLike, onCardDelete, onCardClick } = props;
@@ -20,7 +21,7 @@ export default function Card(props) {
 
   function handleImageClick() {
     if (onCardClick) {
-      onCardClick(card);
+      onCardClick({children:<ImagePopup name={card.name}link={card.link}/>})
     }
   }
  
